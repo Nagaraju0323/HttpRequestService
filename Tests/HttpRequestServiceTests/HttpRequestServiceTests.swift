@@ -2,9 +2,11 @@ import XCTest
 @testable import HttpRequestService
 
 final class HttpRequestServiceTests: XCTestCase {
-    func testExample() throws {
-       
-        XCTAssertEqual(HttpRequestService().name, "Hello")
+    
+    func test_init_doesNotRequestDataFromURL() throws {
+       let client = HttpRequestService()
+        XCTAssertNil(client.RequestURL)
         
     }
+    
 }
