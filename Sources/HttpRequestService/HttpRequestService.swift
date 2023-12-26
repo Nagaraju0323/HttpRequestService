@@ -3,10 +3,16 @@
 
 import Foundation
 
-public class HttpRequestService {
+protocol HttpClient {
+    func get(from url:URL)
+}
+
+public class HttpRequestService:HttpClient {
  
-    public private(set) var RequestURL:URL?
+    public private(set) var requestURL: URL?
     
-    
+    func get(from url:URL) {
+        requestURL = url
+    }
     
 }
